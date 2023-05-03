@@ -1,4 +1,4 @@
-#### This is the record of my cpp_piscine project at 42
+#### This is my learning record of  cpp_piscine project at 42 school
 ### First guide I'll try to be aware of:
 
 **- Encapsulation:** Group related data and functions together within a class, and hide the implementation details from outside the class using access specifiers (private, protected, public). This makes the code more modular and maintainable.
