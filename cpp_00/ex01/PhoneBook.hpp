@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:32:41 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/04 22:06:58 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:29:54 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
+#include <sstream>
+#include <cstdlib>
 
 class	Contact
 {
@@ -50,18 +52,18 @@ class	PhoneBook
 {
 	public:
 
-	PhoneBook(void);
-	~PhoneBook(void);
+	PhoneBook( void );
+	~PhoneBook( void );
 
-	Contact	_contacts[8];
 	
-	void	addContact(int index);
-	void	searchContact(void);
+	void	addContact( int index );
+	void	searchContact( void );
 	int		getCount( void ) const;
 	void	setCount( int count );
 	
 	private:
 
+	Contact	_contacts[8];
 	int	_count;
 };
 
