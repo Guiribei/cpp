@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 21:28:14 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/07 17:28:05 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:37:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	while (true)
 	{
 		input.clear();
-		std::cout << "What action do you want to take (ADD, SEARCH, EXIT)?" << std::endl;
+		std::cout << "Which action do you want to take (ADD, SEARCH, EXIT)?" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "")
 			return -1;
