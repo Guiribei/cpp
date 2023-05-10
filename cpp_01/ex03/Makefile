@@ -1,4 +1,4 @@
-NAME = weapon
+NAME = violence
 PATH_SRCS = ./
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 PATH_OBJS = ./objects/

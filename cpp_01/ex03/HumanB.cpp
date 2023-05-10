@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:58:45 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/09 21:36:02 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/10 00:01:46 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ HumanB::~HumanB( void )
 	
 Weapon	HumanB::getWeapon( void ) const
 {
-	return this->_weapon;
+	return *this->_weapon;
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon& weapon)
 {
-	this->_weapon = weapon;
+	this->_weapon = &weapon;
 }
 
 std::string	HumanB::getName( void ) const
@@ -45,5 +45,5 @@ void	HumanB::setName( std::string name)
 
 void		HumanB::attack( void )
 {
-	std::cout << this->_name << "attacks with their" << this->_weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
