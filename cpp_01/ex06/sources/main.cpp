@@ -6,30 +6,63 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 21:16:57 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/14 12:30:15 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/14 13:27:33 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	Harl	guy;
+	Harl		guy;
+	int			i;
+	std::string	new_argv;
+	std::string	options[] = {"ERROR", "WARNING", "INFO", "DEBUG"};
 
-	std::cout << "Guy Debug: " << std::endl;
-	guy.complain("DEBUG");
-	std::cout << std::endl;
-	std::cout << "Guy Info: " << std::endl;
-	guy.complain("INFO");
-	std::cout << std::endl;
-	std::cout << "Guy Warning: " << std::endl;
-	guy.complain("WARNING");
-	std::cout << std::endl;
-	std::cout << "Guy Error: " << std::endl;
-	guy.complain("ERROR");
-	std::cout << std::endl;
-	std::cout << "Invalid Complain: " << std::endl;
-	guy.complain("INVALID");
-	std::cout << std::endl;
+	if (argc != 2)
+		return (printError("Invalid number of arguments"));
+	new_argv = std::string(argv[1]);
+	i = 0;
+	while (i < 4)
+	{
+		if (new_argv == options[i])
+			break ;
+		i++;
+	}
+	switch (i)
+	{
+	case 3:
+		while (i >= 0)
+		{
+			guy.complain(options[i]);
+			i--;
+		}
+		break;
+	case 2:
+		while (i >= 0)
+		{
+			guy.complain(options[i]);
+			i--;
+		}
+		break;
+	case 1:
+		while (i >= 0)
+		{
+			guy.complain(options[i]);
+			i--;
+		}
+		break;
+	case 0:
+		while (i >= 0)
+		{
+			guy.complain(options[i]);
+			i--;
+		}
+		break;
+	
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
+	}
 	return (0);
 }

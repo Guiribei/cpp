@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   printError.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 21:17:20 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/14 12:24:34 by guribeir         ###   ########.fr       */
+/*   Created: 2023/05/10 23:00:38 by guribeir          #+#    #+#             */
+/*   Updated: 2023/05/14 12:55:26 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-
-class	Harl
+int	printError(std::string str)
 {
-	private:
-
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
-
-	public:
-	
-	Harl( void );
-	~Harl( void );
-
-	void complain( std::string level );
-};
-
-#endif
+	std::cout << str << std::endl;
+	return (1);
+}

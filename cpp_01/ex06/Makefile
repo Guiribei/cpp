@@ -1,6 +1,6 @@
-NAME = harl
+NAME = harlFilter
 PATH_SRCS = ./sources/
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Harl.cpp printError.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/

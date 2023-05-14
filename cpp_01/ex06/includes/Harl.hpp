@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 21:17:20 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/14 12:24:34 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/14 12:53:53 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ class	Harl
 
 	void complain( std::string level );
 };
+
+int			printError(std::string str);
 
 #endif
