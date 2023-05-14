@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:44 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/14 18:16:46 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:26:55 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class	Fixed
 
 	Fixed( void );
 	~Fixed( void );
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
 };
 
 #endif
