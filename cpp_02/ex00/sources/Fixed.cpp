@@ -6,38 +6,50 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:14:18 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/15 21:42:36 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/17 20:32:06 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( std::string name ) : _name(name)
+Fixed::Fixed( void )
 {
+	std::cout << "Default constructor called" << std::endl;
+	this->_value = 0;
 	return ;
 }
 
 Fixed::~Fixed( void )
 {
+	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-Fixed::Fixed(const Fixed& other) : _name(other._name)
+Fixed::Fixed(const Fixed& other)
 {
-	//algum processamento
+	std::cout << "Copy constructor called" << std::endl;
+	this->_value = other.getRawBits();
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	if (this != &other)
 	{
-		this->_name = other._name;
-		//copiar os atributos de other para este objeto;
+		std::cout << "Copy assignment operator called" << std::endl;
+		this->_value = other.getRawBits();
 	}
 	return (*this);
 }
 
-std::string Fixed::getName() const
+int Fixed::getRawBits() const
 {
-    return _name;
+	std::cout << "getRawBits member function called" << std::endl;
+    return _value;
+}
+
+void Fixed::setRawBits(int const value)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	this->_value = value;
+    return ;
 }

@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:44 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/15 21:42:21 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/17 20:24:00 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ class	Fixed
 {
 	private:
 	
-	std::string _name;
+	int					_value;
+	static const int	num_bits = 8;
 	
 	public:
 
-	Fixed( std::string name );
+	Fixed( void );
 	~Fixed( void );
-	Fixed(const Fixed& other);
-	Fixed& operator=(const Fixed& other);
+	Fixed( const Fixed& other );
+	Fixed& operator=( const Fixed& other );
 
-	std::string getName() const;
+	int		getRawBits( void ) const;
+	void	setRawBits( int const value );
 };
 
 #endif
