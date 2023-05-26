@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:14:18 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/26 15:23:53 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:13:18 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,32 @@ Fixed::Fixed( void )
 	return ;
 }
 
+Fixed::Fixed( const int num )
+{
+	this->_value = num << num_bits;
+	std::cout << "Int constructor called" << std::endl;
+	return ;
+}
+
+Fixed::Fixed( const float num )
+{
+	this->_value = roundf(num * (1 << num_bits));
+	std::cout << "Float constructor called" << std::endl;
+}
+
 Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
-Fixed& Fixed::operator=(const Fixed& other)
+Fixed &Fixed::operator=(const Fixed &other)
 {
 	if (this != &other)
 	{
@@ -41,15 +54,51 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return (*this);
 }
 
+Fixed Fixed::operator+(const Fixed& rhs) const
+{
+	Fixed sum;
+
+	sum._value = this->_value + rhs._value;
+	return sum;
+}
+
+Fixed Fixed::operator-(const Fixed& rhs) const
+{
+	Fixed sum;
+
+	sum._value = this->_value - rhs._value;
+	return sum;
+}
+
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
     return _value;
 }
 
 void Fixed::setRawBits(int const value)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = value;
     return ;
+}
+
+float	Fixed::toFloat( void ) const
+{
+	float float_number;
+
+	float_number = float((float)(_value) / (float)(1 << num_bits));
+	return (float_number);
+}
+
+int		Fixed::toInt( void ) const
+{
+	int	restored_int;
+
+	restored_int = _value >> num_bits;
+	return (restored_int);
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fx)
+{
+    os << fx.toFloat();
+    return (os);
 }

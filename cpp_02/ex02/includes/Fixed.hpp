@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:44 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/26 15:22:33 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:28:50 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ class	Fixed
 	Fixed( const float num );
 	~Fixed( void );
 	Fixed( const Fixed& other );
-	Fixed& operator=( const Fixed& other );
+	Fixed&	operator=( const Fixed& other );
+	Fixed	operator+(const Fixed& rhs) const;
+	Fixed	operator-(const Fixed& rhs) const;
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const value );
