@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:14:18 by guribeir          #+#    #+#             */
-/*   Updated: 2023/05/26 17:13:18 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/01 20:31:59 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,48 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 Fixed Fixed::operator+(const Fixed& rhs) const
 {
-	Fixed sum;
+	Fixed lhs;
 
-	sum._value = this->_value + rhs._value;
-	return sum;
+	lhs._value = this->_value + rhs._value;
+	return lhs;
 }
 
 Fixed Fixed::operator-(const Fixed& rhs) const
 {
-	Fixed sum;
+	Fixed lhs;
 
-	sum._value = this->_value - rhs._value;
-	return sum;
+	lhs._value = this->_value - rhs._value;
+	return lhs;
+}
+
+Fixed Fixed::operator*(const Fixed& rhs) const
+{
+	Fixed lhs;
+
+	lhs._value = (this->_value * rhs.getRawBits() >> num_bits);
+	return lhs;
+}
+
+Fixed Fixed::operator/(const Fixed& rhs) const
+{
+	Fixed lhs;
+
+	lhs._value = ((this->_value << num_bits) / rhs.getRawBits());
+	return lhs;
+}
+
+Fixed &Fixed::operator++(void)
+{
+	++this->_value;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+
+	++this->_value;
+	return this;
 }
 
 int Fixed::getRawBits() const
