@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:44 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/01 20:30:58 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/05 22:51:36 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,19 @@ class	Fixed
 	Fixed	operator-(const Fixed& rhs) const;
 	Fixed	operator*(const Fixed& rhs) const;
 	Fixed	operator/(const Fixed& rhs) const;
-	Fixed 	&Fixed::operator++(void);
-	Fixed 	Fixed::operator++(int);
-
+	Fixed 	&operator++(void);
+	Fixed 	operator++(int);
+	Fixed 	&operator--(void);
+	Fixed 	operator--(int);
+	
+	bool	operator<(const Fixed &fx) const;
+	bool	operator>(const Fixed &fx) const;
+	bool	operator<=(const Fixed &fx) const;
+	bool	operator>=(const Fixed &fx) const;
+	bool	operator==(const Fixed &fx) const;
+	bool	operator!=(const Fixed &fx) const;
+	const Fixed &max(const Fixed &fx1, const Fixed &fx2);
+	const Fixed &min(const Fixed &fx1, const Fixed &fx2);
 	int		getRawBits( void ) const;
 	void	setRawBits( int const value );
 	float	toFloat( void ) const;
