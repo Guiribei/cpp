@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:14:18 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/05 22:51:52 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/06 20:24:00 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ Fixed Fixed::operator++(int)
 	Fixed temp(*this);
 
 	++this->_value;
-	return *this;
+	return temp;
 }
 
 Fixed &Fixed::operator--(void)
@@ -152,6 +152,20 @@ const Fixed &Fixed::max(const Fixed &fx1, const Fixed &fx2)
 }
 
 const Fixed &Fixed::min(const Fixed &fx1, const Fixed &fx2)
+{
+	if (fx1 <= fx2)
+		return (fx1);
+	return (fx2);
+}
+
+Fixed &Fixed::max(Fixed &fx1, Fixed &fx2)
+{
+	if (fx1 >= fx2)
+		return (fx1);
+	return (fx2);
+}
+
+Fixed &Fixed::min(Fixed &fx1, Fixed &fx2)
 {
 	if (fx1 <= fx2)
 		return (fx1);
