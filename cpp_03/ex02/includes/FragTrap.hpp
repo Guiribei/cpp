@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 19:30:05 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/14 23:01:32 by guribeir         ###   ########.fr       */
+/*   Created: 2023/06/14 21:58:30 by guribeir          #+#    #+#             */
+/*   Updated: 2023/06/14 23:19:57 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int	main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	std::string name = "Robert";
-	std::string	target = "Edu";
-	ScavTrap scavtrap(name);
+	public:
+	
+	FragTrap( void );
+	FragTrap( std::string name );
+	FragTrap( const FragTrap &other );
+	~FragTrap( void );
+	FragTrap &operator=( const FragTrap &other );
 
-	scavtrap.attack(target);
-	scavtrap.takeDamage(15);
-	scavtrap.beRepaired(15);
-	scavtrap.guardGate();
-	std::cout << "The fight is over!" << std::endl;
-	return (0);
-}
+	void		attack( const std::string& target );
+	void		highFivesGuys( void );
+
+};
+
+#endif

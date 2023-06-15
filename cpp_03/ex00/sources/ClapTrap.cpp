@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:29:42 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/13 20:55:26 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/14 23:18:09 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 ClapTrap::ClapTrap( void )
 {
 	this->_name = "";
-	this->_hitPoints = 0;
-	this->_energyPoints = 0;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 	std::cout << "Constructor default called" << std::endl;
 	return ;

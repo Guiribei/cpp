@@ -1,6 +1,6 @@
-NAME = scav
+NAME = frag
 PATH_SRCS = ./sources/
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/

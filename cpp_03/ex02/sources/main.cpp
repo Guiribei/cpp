@@ -6,22 +6,23 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:30:05 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/14 23:01:32 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/14 23:24:20 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	std::string name = "Robert";
+	std::string name = "Midas";
 	std::string	target = "Edu";
-	ScavTrap scavtrap(name);
+	FragTrap fragtrap(name);
 
-	scavtrap.attack(target);
-	scavtrap.takeDamage(15);
-	scavtrap.beRepaired(15);
-	scavtrap.guardGate();
+	fragtrap.attack(target);
+	fragtrap.takeDamage(15);
+	fragtrap.beRepaired(15);
+	fragtrap.highFivesGuys();
 	std::cout << "The fight is over!" << std::endl;
 	return (0);
 }
