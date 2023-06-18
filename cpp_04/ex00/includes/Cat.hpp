@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 19:30:05 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 22:18:39 by guribeir         ###   ########.fr       */
+/*   Created: 2023/06/17 21:53:34 by guribeir          #+#    #+#             */
+/*   Updated: 2023/06/17 21:57:59 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int	main(void)
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	Animal	joe;
-	Animal	*bob = new Animal();
-	Animal	*cat1 = new Cat();
-	Animal	*dog1 = new Dog();
-	Dog		dog2;
-	Cat		cat2;
+	public:
 
-	joe.makeSound();
-	cat1->makeSound();
-	dog1->makeSound();
-	bob->makeSound();
-	cat2.makeSound();
-	dog2.makeSound();
+	Cat( void );
+	~Cat( void );
+	Cat ( const Cat &other);
+	Cat &operator=( const Cat &other );
+	void	makeSound( void );
+};
 
-	delete bob;
-	delete cat1;
-	delete dog1;
-	
-	return (0);
-}
+#endif

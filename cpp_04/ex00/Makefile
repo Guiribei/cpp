@@ -1,6 +1,6 @@
 NAME = animals
 PATH_SRCS = ./sources/
-SRCS = main.cpp Animal.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/

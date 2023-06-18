@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 19:29:42 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 21:48:01 by guribeir         ###   ########.fr       */
+/*   Created: 2023/06/17 21:35:13 by guribeir          #+#    #+#             */
+/*   Updated: 2023/06/17 21:50:42 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal( void )
+Dog::Dog( void )
 {
-	this->type = "Animal";
-	std::cout << "Animal default constructor called" << std::endl;
+	this->type = "Dog";
+	std::cout << "Dog default constructor called" << std::endl;
 	return ;
 }
 
-Animal::~Animal( void )
+Dog::~Dog( void )
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 	return ;
 }
 
-Animal::Animal( const Animal &other )
+Dog::Dog( const Dog &other ) : Animal()
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 	*this = other;
 	return ;
 }
 
-Animal &Animal::operator=( const Animal &other)
+Dog &Dog::operator=( const Dog &other)
 {
 	if (this != &other)
 	{
 		this->type = other.type;
 	}
-	std::cout << "Animal assignment operator called" << std::endl;
+	std::cout << "Dog assignment operator called" << std::endl;
 	return (*this);
 }
 
-void	Animal::makeSound( void )
+void	Dog::makeSound( void )
 {
-	std::cout << "Urrhhhh" << std::endl;
+	std::cout << "Woof" << std::endl;
 }
