@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:30:05 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/14 23:24:20 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:57:07 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int	main(void)
 	FragTrap fragtrap(name);
 
 	fragtrap.attack(target);
-	fragtrap.takeDamage(15);
+	fragtrap.takeDamage(25);
 	fragtrap.beRepaired(15);
 	fragtrap.highFivesGuys();
+	std::cout << fragtrap << std::endl;
 	std::cout << "The fight is over!" << std::endl;
 	return (0);
 }

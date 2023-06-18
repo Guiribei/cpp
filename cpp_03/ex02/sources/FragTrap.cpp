@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:15:39 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/14 23:25:33 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 19:20:19 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap( void )
 {
-	this->_name = "";
+	this->_name = "FragTrap";
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
@@ -56,6 +56,11 @@ FragTrap &FragTrap::operator=( const FragTrap &other )
 
 void	FragTrap::attack( const std::string &target )
 {
+	if (this->_hitPoints <= 0)
+	{
+		std::cout << "FragTrap is dead, it can't perform an attack" << std::endl;
+		return ;
+	}
 	if (this->_energyPoints > 0)
 	{
 		std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
