@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 21:33:56 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 21:38:32 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:14:16 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
 	~Dog( void );
 	Dog( const Dog &other );
 	Dog &operator=( const Dog &other );
-	void	makeSound( void );
+	void	makeSound( void ) const;
 };
 
 #endif

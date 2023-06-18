@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:27:06 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 22:15:24 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:14:08 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class Animal
 	virtual ~Animal( void );
 	Animal( const Animal &other );
 	Animal &operator=( const Animal &other );
-	virtual void	makeSound( void );
+	std::string	getType( void ) const;
+	void setType( std::string const type );
+	virtual void makeSound( void ) const;
 };
 
 #endif
