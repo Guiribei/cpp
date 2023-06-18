@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 21:59:00 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 22:14:52 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:15:55 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ Cat &Cat::operator=( const Cat &other)
 
 void	Cat::makeSound( void )
 {
-	std::cout << "Meow" << std::endl;
+	std::cout << "Miiaau" << std::endl;
 }

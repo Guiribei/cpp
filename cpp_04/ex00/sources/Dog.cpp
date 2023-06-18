@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 21:35:13 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/17 21:50:42 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:16:04 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Dog &Dog::operator=( const Dog &other)
 
 void	Dog::makeSound( void )
 {
-	std::cout << "Woof" << std::endl;
+	std::cout << "Au Au Au" << std::endl;
 }
