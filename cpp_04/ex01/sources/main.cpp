@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:30:05 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/19 23:02:03 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:18:14 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,13 @@ int	main(void)
 	yourCat.setIdea(0, (std::string)"Cows shouldn't fly");
 	std::cout << "Your cat: " << yourCat.getIdea(0) << std::endl;
 	std::cout << "My cat: " << myCat.getIdea(0) << std::endl;
+
+	Dog myDog;
+	Dog yourDog = myDog;
+	
+	yourDog.setIdea(0, (std::string)"Auuuuu");
+	std::cout << "My Dog: " << myDog.getIdea(0) << std::endl;
+	std::cout << "Your Dog: " << yourDog.getIdea(0) << std::endl;
+	
 	return (0);
 }
