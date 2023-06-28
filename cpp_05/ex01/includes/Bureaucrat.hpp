@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 20:51:56 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/22 21:03:45 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/27 21:39:56 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ class Bureaucrat
 	void setGrade( int const &grade );
 	void incrementGrade( void );
 	void decrementGrade( void );
+	void signForm( Form &form );
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bur);
