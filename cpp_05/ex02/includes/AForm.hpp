@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:59:04 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/29 18:28:11 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/29 20:03:59 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 	
@@ -47,18 +47,19 @@ class Form
 		}
 	};
 	
-	Form( void );
-	~Form( void );
-	Form(std::string name, const int gradeToSign, const int gradeToExecute);
-	Form( const Form &other);
-	Form &operator=( const Form &other );
+	AForm( void );
+	~AForm( void );
+	AForm(std::string name, const int gradeToSign, const int gradeToExecute);
+	AForm( const AForm &other);
+	AForm &operator=( const AForm &other );
 	std::string getName( void ) const;
 	bool getIsSigned( void ) const;
 	const int& getGradeToSign( void ) const;
 	const int& getGradeToExecute( void ) const;
 	void beSigned( Bureaucrat &bur );
+	virtual void execute( Bureaucrat const &executor ) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &form);
+std::ostream &operator<<(std::ostream &os, const AForm &form);
 
 #endif

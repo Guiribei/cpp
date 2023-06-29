@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 21:38:55 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/29 18:56:01 by guribeir         ###   ########.fr       */
+/*   Created: 2023/06/29 19:24:28 by guribeir          #+#    #+#             */
+/*   Updated: 2023/06/29 20:18:05 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
+
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-int	main(void)
+class ShrubberyCreationForm : public AForm
 {
-	Bureaucrat teacher("Teacher", 3);
-	Bureaucrat monitor("Monitor", 10);
-	Form		exam("Math Exam", 5, 3);
-
-	std::cout << teacher;
-	std::cout << exam;
-
-	monitor.signForm(exam);
-	teacher.signForm(exam);
-	teacher.signForm(exam);
+	public:
 	
-	std::cout << exam;
-}
+	ShrubberyCreationForm( void );
+	~ShrubberyCreationForm( void );
+	ShrubberyCreationForm( const ShrubberyCreationForm &other );
+	ShrubberyCreationForm &operator=( const ShrubberyCreationForm &other );
+	void execute( Bureaucrat const &executor ) const;
+	
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 20:51:41 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/29 18:55:18 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/06/29 19:19:35 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void Bureaucrat::decrementGrade( void )
 		this->_grade += 1;
 }
 
-void Bureaucrat::signForm( Form &form )
+void Bureaucrat::signForm( AForm &form )
 {
 	if (form.getIsSigned() == true)
 	{
