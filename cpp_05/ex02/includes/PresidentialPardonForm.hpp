@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 19:24:28 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/02 11:53:00 by guribeir         ###   ########.fr       */
+/*   Created: 2023/07/02 15:48:33 by guribeir          #+#    #+#             */
+/*   Updated: 2023/07/02 15:49:11 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include <fstream>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
 	
-	ShrubberyCreationForm( void );
-	~ShrubberyCreationForm( void );
-	ShrubberyCreationForm( std::string target );
-	ShrubberyCreationForm( const ShrubberyCreationForm &other );
-	ShrubberyCreationForm &operator=( const ShrubberyCreationForm &other );
+	PresidentialPardonForm( void );
+	~PresidentialPardonForm( void );
+	PresidentialPardonForm( std::string target );
+	PresidentialPardonForm( const PresidentialPardonForm &other );
+	PresidentialPardonForm &operator=( const PresidentialPardonForm &other );
 	void execute( Bureaucrat const &executor ) const;
 	
 };

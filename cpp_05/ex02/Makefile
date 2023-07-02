@@ -1,6 +1,6 @@
-NAME = bureaucrat
+NAME = forms
 PATH_SRCS = ./sources/
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/

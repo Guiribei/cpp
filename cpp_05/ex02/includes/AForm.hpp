@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:59:04 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/29 20:03:59 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/02 11:51:06 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,43 @@ class AForm
 	const int _gradeToSign;
 	const int _gradeToExecute;
 
+	protected:
+
+	std::string _target;
+		
 	public:
 	
 	class GradeTooHighException : public std::exception
 	{
 		public:
-		virtual const char* what() const throw()
-		{
-			return ("The grade value is too high");
-		}
+		virtual const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public:
-		virtual const char* what() const throw()
-		{
-			return ("The grade value is too low");
-		}
+		virtual const char* what() const throw();
+	};
+
+	class NotSignedException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw();
+	};
+
+	class FileOpenException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw();
 	};
 	
 	AForm( void );
-	~AForm( void );
-	AForm(std::string name, const int gradeToSign, const int gradeToExecute);
+	virtual ~AForm( void );
+	AForm(std::string name, const int gradeToSign, const int gradeToExecute, std::string target);
 	AForm( const AForm &other);
 	AForm &operator=( const AForm &other );
 	std::string getName( void ) const;
+	int getGrade( void ) const;
 	bool getIsSigned( void ) const;
 	const int& getGradeToSign( void ) const;
 	const int& getGradeToExecute( void ) const;

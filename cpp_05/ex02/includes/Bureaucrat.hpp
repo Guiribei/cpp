@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 20:51:56 by guribeir          #+#    #+#             */
-/*   Updated: 2023/06/29 20:04:02 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/02 16:24:49 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ class Bureaucrat
 	void incrementGrade( void );
 	void decrementGrade( void );
 	void signForm( AForm &form );
-	//void executeForm( AForm const &form );
+	void executeForm( AForm const &form );
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bur);
