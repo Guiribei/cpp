@@ -69,11 +69,6 @@ int Bureaucrat::getGrade( void ) const
 	return this->_grade;
 }
 
-void Bureaucrat::setName( std::string const &name)
-{
-	this->_name = name;
-}
-
 void Bureaucrat::setGrade( int const &grade )
 {
 	this->_grade = grade;
