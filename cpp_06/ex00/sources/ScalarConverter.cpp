@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 19:51:24 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/05 20:55:29 by guribeir         ###   ########.fr       */
+/*   Created: 2023/07/05 20:48:47 by guribeir          #+#    #+#             */
+/*   Updated: 2023/07/05 20:56:06 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main(int ac, char **av)
+ScalarConverter::ScalarConverter( void )
 {
-	if (ac != 2)
-	{
-		std::cerr << "Error: Invalid number of arguments. Usage: ./convert [input]" << std::endl;
-		return (1);
-	}
-	ScalarConverter::convert(av[1]);
-	return (0);
+	return ;
+}
+
+ScalarConverter::~ScalarConverter( void )
+{
+	return ;
+}
+
+ScalarConverter::ScalarConverter( ScalarConverter const &other )
+{
+	*this = other;
+	return ;
+}
+
+ScalarConverter & ScalarConverter::operator=( ScalarConverter const &other )
+{
+	(void)other;
+	return (*this);
+}
+
+void ScalarConverter::convert( char *input )
+{
+	(void)input;
+	std::cout << "DAALE" << std::endl;
 }

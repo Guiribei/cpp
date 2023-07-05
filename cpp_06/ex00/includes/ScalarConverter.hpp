@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 19:51:24 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/05 20:55:29 by guribeir         ###   ########.fr       */
+/*   Created: 2023/07/05 20:49:01 by guribeir          #+#    #+#             */
+/*   Updated: 2023/07/05 20:52:27 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-int main(int ac, char **av)
+# include <iostream>
+# include <limits>
+
+class ScalarConverter
 {
-	if (ac != 2)
-	{
-		std::cerr << "Error: Invalid number of arguments. Usage: ./convert [input]" << std::endl;
-		return (1);
-	}
-	ScalarConverter::convert(av[1]);
-	return (0);
-}
+	private:
+	
+	ScalarConverter( void );
+	~ScalarConverter( void );
+	ScalarConverter( ScalarConverter const &other );
+	ScalarConverter & operator=( ScalarConverter const &other );
+
+	public:
+	
+	static void convert( char *input );		
+};
+
+#endif

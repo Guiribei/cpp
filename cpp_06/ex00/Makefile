@@ -1,6 +1,6 @@
 NAME = conversion
 PATH_SRCS = ./sources/
-SRCS = main.cpp
+SRCS = main.cpp ScalarConverter.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/
