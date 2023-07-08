@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:06:36 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/07 18:17:21 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/08 05:02:43 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define SERIALIZER_HPP
 
 # include <iostream>
+# include <stdint.h>
 # include "Data.hpp"
 
 class Serializer
@@ -27,8 +28,8 @@ class Serializer
 	
 	public:
 
-	uintptr_t serialize(Data* ptr);
-	Data* deserialize(uintptr_t raw);
+	static uintptr_t serialize(Data* ptr);
+	static Data* deserialize(uintptr_t raw);
 };
 
 #endif
