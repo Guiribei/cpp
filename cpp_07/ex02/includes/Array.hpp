@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 16:35:39 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/09 19:33:51 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/09 19:50:32 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ class Array
 		return ;
 	}
 
-	T &operator[]( size_t index )
+	T &operator[]( size_t index ) const
 	{
-		if (index >= this->_size)
-			throw std::exception();
+		if (index >= this->_size || index < 0)
+			throw std::out_of_range("Index out of bounds");
 		return (this->_array[index]);
 	}
 
