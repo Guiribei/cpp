@@ -35,9 +35,6 @@ Serializer & Serializer::operator=( Serializer const &other )
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other)
-	{
-		//code;
-	}
 	return (*this);
 }
 
