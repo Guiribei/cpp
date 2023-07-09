@@ -6,29 +6,29 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:06:08 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/08 21:58:28 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/09 01:20:21 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-
-std::ostream &operator<<(std::ostream &os, Data &data)
-{
-	os << "String one: " << data.s1 << "\n" << "String two: " << data.s2 << "\n" << "Password: " << data.nb << std::endl;
-	return os;
-}
+#include "utils.hpp"
 
 int main( void )
 {
-	Data someData = {"Hello", "World", 1};
-	Data *pointer;
-	uintptr_t ptr;
+	Base *base = generate();
+
+	std::cout << "---------Testing A, B or C ------------" << std::endl;
+
+	identify(*base);
+	identify(base);
+	delete base;
+
+	std::cout << "--------Testing Invalid -------------" << std::endl;
 	
-	std::cout << someData;
-	pointer = &someData;
-	ptr = Serializer::serialize(pointer);
-	std::cout << ptr << std::endl;
-	pointer = Serializer::deserialize(ptr);
-	std::cout << *pointer;
+	Base *baseError = new Base();
+	Base &baseErrorRef = *new Base();
+	identify(baseError);
+	identify(baseErrorRef);
+	delete baseError;
+	delete &baseErrorRef;
 	return (0);
 }
