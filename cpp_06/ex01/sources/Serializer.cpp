@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 18:06:59 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/08 01:09:16 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:16:59 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Serializer::Serializer ( Serializer const &other )
 Serializer & Serializer::operator=( Serializer const &other )
 {
 	std::cout << "Assignation operator called" << std::endl;
-	if (this != &other)
 	return (*this);
 }
 
