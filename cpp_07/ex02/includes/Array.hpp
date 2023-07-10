@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 16:35:39 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/09 19:50:32 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:06:44 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Array
 	public:
 	Array ( void )
 	{
-		this->_array = new T();
+		this->_array = NULL;
 		this->_size = 0;
 		std::cout << "Default constructor called" << std::endl;
 		return ;
@@ -42,6 +42,8 @@ class Array
 	Array ( Array const &other )
 	{
 		std::cout << "Copy constructor called" << std::endl;
+		this->_array = NULL;
+		this->_size = 0;
 		*this = other;
 		return ;
 	}
@@ -50,7 +52,8 @@ class Array
 	{
 		if (this != &other)
 		{
-			delete [] this->_array;
+			if (this->_array)
+				delete [] this->_array;
 			this->_array = new T[other._size];
 			this->_size = other._size;
 			for (size_t i = 0; i < other._size; i++)
@@ -65,7 +68,8 @@ class Array
 	~Array ( void )
 	{
 		std::cout << "Destructor called" << std::endl;
-		delete [] this->_array;
+		if (_array != NULL)
+			delete [] this->_array;
 		return ;
 	}
 
