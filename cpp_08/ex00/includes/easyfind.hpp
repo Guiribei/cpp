@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 22:12:23 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/10 22:14:22 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/11 19:58:43 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 # define EASYFIND_HPP
 
 #include <iostream>
+#include <algorithm>
 
 template <typename T>
-int easyfind(T &container, int n)
+typename T::iterator easyfind(T &container, int n)
 {
 	typename T::iterator it;
-
+	
 	it = std::find(container.begin(), container.end(), n);
 	if (it == container.end())
-		throw std::exception();
-	return *it;
+		throw std::logic_error("Integer not found");
+	return (it);
 }
 
 #endif

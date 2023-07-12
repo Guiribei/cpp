@@ -1,6 +1,6 @@
-NAME = find
+NAME = span
 PATH_SRCS = ./sources/
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/
