@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 16:35:39 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/10 19:06:44 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/12 21:59:25 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Array
 	Array ( unsigned int n )
 	{
 		this->_array = new T[n];
-		for (size_t i = 0; i < n; i++)
+		for (unsigned int i = 0; i < n; i++)
 		{
 			this->_array[i] = 0;
 		}
@@ -56,7 +56,7 @@ class Array
 				delete [] this->_array;
 			this->_array = new T[other._size];
 			this->_size = other._size;
-			for (size_t i = 0; i < other._size; i++)
+			for (unsigned int i = 0; i < other._size; i++)
 			{
 				this->_array[i] = other._array[i];
 			}
@@ -73,21 +73,21 @@ class Array
 		return ;
 	}
 
-	T &operator[]( size_t index ) const
+	T &operator[]( unsigned int index ) const
 	{
-		if (index >= this->_size || index < 0)
+		if (index >= this->_size)
 			throw std::out_of_range("Index out of bounds");
 		return (this->_array[index]);
 	}
 
-	size_t size( void ) const
+	unsigned int size( void ) const
 	{
 		return this->_size;
 	}
 
 	private:
 	T		*_array;
-	size_t	_size;
+	unsigned int	_size;
 };
 
 #endif

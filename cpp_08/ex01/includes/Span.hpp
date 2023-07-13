@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:13:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/11 20:48:30 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/12 20:30:29 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Span
 	private:
 
 		unsigned int		_n;
-		std::vector<int>	*_vec;
+		std::vector<int>	_vec;
 		
 	public:
 		Span(void);

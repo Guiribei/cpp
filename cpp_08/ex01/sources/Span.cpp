@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:14:19 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/11 21:01:48 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/12 20:30:58 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Span::Span( unsigned int n ) : _n(n),
 	return ;
 }
 
-Span::Span(Span const &src) : _n(src._n), _vec(new std::vector<int>(*src._vec))
+Span::Span(Span const &src) : _n(src._n), _vec()
 {
 	return ;
 }
@@ -40,7 +40,7 @@ Span & Span::operator=(Span const &src)
 	{
 		delete _vec;
 		_n = src._n;
-		_vec = new std::vector<int>(*src._vec);
+		_vec = ;
 	}
 	return *this;
 }
