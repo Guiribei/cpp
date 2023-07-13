@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:13:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/12 20:30:29 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/12 23:22:57 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ class Span
 		~Span(void);
 		Span &operator=(Span const &src);
 		void addNumber( int n );
-		//void addNumber( int *array, unsigned int size );
-		int shortestSpan( void );
-		int longestSpan( void );
+		void addNumbers( std::vector<int>::iterator start, std::vector<int>::iterator end );
+		int &operator[](int i);
+		//int shortestSpan( void );
+		//int longestSpan( void );
 		class FullArrayException : public std::exception
 		{
 			public:
