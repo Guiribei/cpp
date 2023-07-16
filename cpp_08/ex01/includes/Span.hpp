@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:13:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/12 23:22:57 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/16 17:07:22 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,19 @@ class Span
 		void addNumber( int n );
 		void addNumbers( std::vector<int>::iterator start, std::vector<int>::iterator end );
 		int &operator[](int i);
-		//int shortestSpan( void );
-		//int longestSpan( void );
+		int shortestSpan( void );
+		int longestSpan( void );
 		class FullArrayException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
 		class NotEnoughNumbersException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class WrongAccessException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
