@@ -1,6 +1,6 @@
 NAME = btc
 PATH_SRCS = ./sources/
-SRCS = main.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 PATH_OBJS = ./objects/
 OBJS = ${SRCS:%.cpp=$(PATH_OBJS)%.o}
 INCLUDE = -I ./includes/

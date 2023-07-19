@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:14:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/16 22:53:18 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:05:24 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@ int main( int argc, char **argv )
 {
 	if (argc != 2)
 	{
-		std::cout << "Usage: ./bitcoin [filename]" << std::endl;
+		std::cout << "Error: could not open file." << std::endl;
 		return 1;
 	}
-	BitcoinExchange exchange;
+	try
+	{
+		BitcoinExchange::checkFile(argv[1]);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+		return 1;
+	}
 	return 0;
 }
