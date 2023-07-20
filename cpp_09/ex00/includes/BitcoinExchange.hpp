@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:12:38 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/18 20:46:55 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/19 22:46:51 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class BitcoinExchange
 {
 	private:
 	
-	std::map<std::string, double> prices;
+	static std::map<std::string, double> prices;
 	
 	BitcoinExchange( void );
 	BitcoinExchange( BitcoinExchange const & src );
@@ -34,9 +34,8 @@ class BitcoinExchange
 	
 	public:
 	
-	static void checkFile( char *filename );
-	static void readPrices( char *filename );
-	static void printPrices( void );
+	static void executeExchange(char *filename );
+	static void readPrices( void );
 	
 	class InvalidFileException : public std::exception
 	{

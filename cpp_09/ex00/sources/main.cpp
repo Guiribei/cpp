@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:14:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/18 21:05:24 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:37:00 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,16 @@ int main( int argc, char **argv )
 	}
 	try
 	{
-		BitcoinExchange::checkFile(argv[1]);
+		BitcoinExchange::readPrices();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+		return 1;
+	}
+	try
+	{
+		BitcoinExchange::executeExchange(argv[1]);
 	}
 	catch (std::exception &e)
 	{
