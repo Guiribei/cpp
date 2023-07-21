@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 19:12:38 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/20 20:56:55 by guribeir         ###   ########.fr       */
+/*   Created: 2023/07/20 21:02:11 by guribeir          #+#    #+#             */
+/*   Updated: 2023/07/20 21:38:38 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-# define BITCOINEXCHANGE_HPP
+#ifndef RPN_HPP
+# define RPN_HPP
 
 #include <iostream>
-#include <map>
-#include <algorithm>
-#include <cmath>
-#include <fstream>
 #include <string>
+#include <stack>
+#include <cmath>
+#include <iomanip>
 #include <sstream>
+#include <limits>
+#include <cstdlib>
+#include <algorithm>
 
-class BitcoinExchange
+class RPN
 {
 	private:
-	
-	static std::map<std::string, double> prices;
-	
-	BitcoinExchange( void );
-	BitcoinExchange( BitcoinExchange const & src );
-	BitcoinExchange & operator=( BitcoinExchange const & rhs );
-	~BitcoinExchange( void );
-	
+
+	static std::stack<int>		_stack;
+
+	RPN ( void );
+	RPN ( RPN const & src );
+	RPN & operator=( RPN const & src );
+	~RPN ( void );
+
 	public:
-	
-	static void executeExchange(char *filename );
-	static void readPrices( void );
-	
-	class InvalidFileException : public std::exception
+
+	static void calculate( std::string input );
+
+	class InvalidInputException : public std::exception
 	{
 		public:
 			virtual const char *what() const throw();

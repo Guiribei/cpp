@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:14:26 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/19 22:46:43 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:56:41 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,16 +113,13 @@ static bool checkLine( std::string line )
 
 static double closestValue(const std::map<std::string, double>& prices, const std::string& date) 
 {
-    std::map<std::string, double>::const_iterator it = prices.lower_bound(date);
+    std::map<std::string, double>::const_iterator it = prices.upper_bound(date);
 
     if (it == prices.begin() || it->first == date)
         return it->second;
     std::map<std::string, double>::const_iterator prev = it;
     --prev;
-    if (abs(it->first.compare(date)) < abs(prev->first.compare(date)))
-        return it->second;
-    else
-        return prev->second;
+    return prev->second;
 }
 
 void BitcoinExchange::executeExchange( char *filename )
@@ -158,7 +155,7 @@ void BitcoinExchange::executeExchange( char *filename )
 		std::string finalDate = "2022-03-29";
 		double valueDouble = atof(value.c_str());
 		double closest = closestValue(BitcoinExchange::prices, date);
-		std::cout << date << " => " << valueDouble << " = " << closest << std::endl;
+		std::cout << date << " => " << valueDouble << " = " << closest * valueDouble << std::endl;
 	}
 	file.close();
 	return ;
