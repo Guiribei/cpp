@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:02:11 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/20 21:38:38 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/23 15:18:32 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ class RPN
 	static void calculate( std::string input );
 
 	class InvalidInputException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+	class ZeroDivisionException : public std::exception
 	{
 		public:
 			virtual const char *what() const throw();
