@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 17:05:00 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/25 21:04:39 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/28 21:22:23 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <utility>
 #include <cstdlib>
+#include <ctime>
 
 class PmergeMe
 {
@@ -33,7 +34,7 @@ class PmergeMe
 
 	static std::vector<std::pair<int,int> > _vector;
 	static std::deque<std::pair<int,int> > _deque;
-	//static void mergeDeque(char **input);
+	static void mergeDeque(char **input);
 	static void mergeVector(char **input);
 };
 

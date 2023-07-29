@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:14:47 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/25 21:04:43 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/28 22:04:37 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int main( int argc, char **argv )
 	try
 	{
 		PmergeMe::mergeVector(argv);
-		//PmergeMe::mergeDeque(argv);
+		PmergeMe::mergeDeque(argv);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 	return 0;
 }
