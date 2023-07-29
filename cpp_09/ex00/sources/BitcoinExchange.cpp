@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 19:14:26 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/20 20:56:41 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/29 19:43:03 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static bool parseDate( std::string date )
 	std::istringstream(date.substr(0,4)) >> year;
 	std::istringstream(date.substr(5,2)) >> month;
 	std::istringstream(date.substr(8,2)) >> day;
-	if (year < 2009 || year > 2023)
+	if (year < 2008 || year > 2023)
 		return false;
 	if (month < 1 || month > 12)
 		return false;
@@ -151,8 +151,6 @@ void BitcoinExchange::executeExchange( char *filename )
 		}
 		if (!parseValue(value))
 			continue;
-		std::string initialDate = "2009-01-02";
-		std::string finalDate = "2022-03-29";
 		double valueDouble = atof(value.c_str());
 		double closest = closestValue(BitcoinExchange::prices, date);
 		std::cout << date << " => " << valueDouble << " = " << closest * valueDouble << std::endl;

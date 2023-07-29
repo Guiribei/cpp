@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 17:05:28 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/28 22:00:12 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/07/29 20:34:47 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ static void fillVectorInPairs(char **input)
 	{
 		int first = atoi(input[i]);
 		if (first < 0)
-			throw std::invalid_argument("Invalid argument");
+			throw std::invalid_argument("Error");
 		int second = -1;
 		if(input[i+1])
 		{
 			second = atoi(input[i+1]);
 			if (second < 0)
-			throw std::invalid_argument("Invalid argument");
+			throw std::invalid_argument("Error");
 			++i;
 		}
 		PmergeMe::_vector.push_back(std::pair<int, int>(first, second));
