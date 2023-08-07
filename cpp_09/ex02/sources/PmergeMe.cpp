@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: guribeir <guribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 17:05:28 by guribeir          #+#    #+#             */
-/*   Updated: 2023/07/29 20:34:47 by guribeir         ###   ########.fr       */
+/*   Updated: 2023/08/07 12:54:27 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,24 @@ PmergeMe	&PmergeMe::operator=(PmergeMe const &rhs)
 
 //Vector
 
+static void checkDigit(char *entry)
+{
+	int i = 0;
+	
+	while (entry[i])
+	{
+		if (!std::isdigit(entry[i]))
+			throw std::invalid_argument("Error");
+		i++;
+	}
+}
+
 static void fillVectorInPairs(char **input)
 {
 	int i = 1;
 	while (input[i])
 	{
+		checkDigit(input[i]);
 		int first = atoi(input[i]);
 		if (first < 0)
 			throw std::invalid_argument("Error");
@@ -51,6 +64,7 @@ static void fillVectorInPairs(char **input)
 		if(input[i+1])
 		{
 			second = atoi(input[i+1]);
+			checkDigit(input[i + 1]);
 			if (second < 0)
 			throw std::invalid_argument("Error");
 			++i;
